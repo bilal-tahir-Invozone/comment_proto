@@ -6,11 +6,11 @@ service Comment {
     rpc CreateComment (CreateCommentRequest) returns (CreateCommentResponse);
     rpc GetComment (GetCommentRequest) returns (CreateCommentResponse);
     rpc DeleteComment (DeleteCommentRequest) returns (DeleteCommentResponse);
-    rpc updateComment (UpdateCommentRequest) returns (UpdateCommentResponse);
+    rpc UpdateComment (UpdateCommentRequest) returns (UpdateCommentResponse);
     rpc CreateReply (CreateReplyRequest) returns (CreateReplyResponse);
     rpc GetReply (GetReplyRequest) returns (CreateReplyResponse);
     rpc DeleteReply (DeleteReplyRequest) returns (DeleteReplyResponse);
-    rpc updateReply (UpdateReplyRequest) returns (UpdateReplyResponse);
+    rpc UpdateReply (UpdateReplyRequest) returns (UpdateReplyResponse);
 }
 
 message UpdateReplyRequest{

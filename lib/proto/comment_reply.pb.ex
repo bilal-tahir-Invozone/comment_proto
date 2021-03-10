@@ -294,7 +294,7 @@ defmodule Commentapi.Comment.Service do
 
   rpc :DeleteComment, Commentapi.DeleteCommentRequest, Commentapi.DeleteCommentResponse
 
-  rpc :updateComment, Commentapi.UpdateCommentRequest, Commentapi.UpdateCommentResponse
+  rpc :UpdateComment, Commentapi.UpdateCommentRequest, Commentapi.UpdateCommentResponse
 
   rpc :CreateReply, Commentapi.CreateReplyRequest, Commentapi.CreateReplyResponse
 
@@ -302,7 +302,7 @@ defmodule Commentapi.Comment.Service do
 
   rpc :DeleteReply, Commentapi.DeleteReplyRequest, Commentapi.DeleteReplyResponse
 
-  rpc :updateReply, Commentapi.UpdateReplyRequest, Commentapi.UpdateReplyResponse
+  rpc :UpdateReply, Commentapi.UpdateReplyRequest, Commentapi.UpdateReplyResponse
 end
 
 defmodule Commentapi.Comment.Stub do
