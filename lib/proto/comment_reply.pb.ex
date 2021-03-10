@@ -141,6 +141,45 @@ defmodule Commentapi.CreateReplyResponse do
   field :commentid, 9, type: :int32
 end
 
+defmodule Commentapi.GetReplyResponse do
+  @moduledoc false
+  use Protobuf, syntax: :proto3
+
+  @type t :: %__MODULE__{
+          reply: String.t(),
+          isdeletedbyadmin: boolean,
+          userid: integer,
+          replyid: integer,
+          postid: integer,
+          status: integer,
+          likecount: integer,
+          userlikes: integer,
+          commentid: integer
+        }
+
+  defstruct [
+    :reply,
+    :isdeletedbyadmin,
+    :userid,
+    :replyid,
+    :postid,
+    :status,
+    :likecount,
+    :userlikes,
+    :commentid
+  ]
+
+  field :reply, 1, type: :string
+  field :isdeletedbyadmin, 2, type: :bool
+  field :userid, 3, type: :int32
+  field :replyid, 4, type: :int32
+  field :postid, 5, type: :int32
+  field :status, 6, type: :int32
+  field :likecount, 7, type: :int32
+  field :userlikes, 8, type: :int32
+  field :commentid, 9, type: :int32
+end
+
 defmodule Commentapi.UpdateCommentRequest do
   @moduledoc false
   use Protobuf, syntax: :proto3
@@ -284,13 +323,52 @@ defmodule Commentapi.CreateCommentResponse do
   field :commentid, 9, type: :int32
 end
 
+defmodule Commentapi.GetCommentResponse do
+  @moduledoc false
+  use Protobuf, syntax: :proto3
+
+  @type t :: %__MODULE__{
+          comment: String.t(),
+          isdeletedbyadmin: boolean,
+          userid: integer,
+          replyid: integer,
+          postid: integer,
+          status: integer,
+          likecount: integer,
+          userlikes: integer,
+          commentid: integer
+        }
+
+  defstruct [
+    :comment,
+    :isdeletedbyadmin,
+    :userid,
+    :replyid,
+    :postid,
+    :status,
+    :likecount,
+    :userlikes,
+    :commentid
+  ]
+
+  field :comment, 1, type: :string
+  field :isdeletedbyadmin, 2, type: :bool
+  field :userid, 3, type: :int32
+  field :replyid, 4, type: :int32
+  field :postid, 5, type: :int32
+  field :status, 6, type: :int32
+  field :likecount, 7, type: :int32
+  field :userlikes, 8, type: :int32
+  field :commentid, 9, type: :int32
+end
+
 defmodule Commentapi.Comment.Service do
   @moduledoc false
   use GRPC.Service, name: "commentapi.Comment"
 
   rpc :CreateComment, Commentapi.CreateCommentRequest, Commentapi.CreateCommentResponse
 
-  rpc :GetComment, Commentapi.GetCommentRequest, Commentapi.CreateCommentResponse
+  rpc :GetComment, Commentapi.GetCommentRequest, Commentapi.GetCommentResponse
 
   rpc :DeleteComment, Commentapi.DeleteCommentRequest, Commentapi.DeleteCommentResponse
 
@@ -298,7 +376,7 @@ defmodule Commentapi.Comment.Service do
 
   rpc :CreateReply, Commentapi.CreateReplyRequest, Commentapi.CreateReplyResponse
 
-  rpc :GetReply, Commentapi.GetReplyRequest, Commentapi.CreateReplyResponse
+  rpc :GetReply, Commentapi.GetReplyRequest, Commentapi.GetReplyResponse
 
   rpc :DeleteReply, Commentapi.DeleteReplyRequest, Commentapi.DeleteReplyResponse
 

@@ -4,11 +4,11 @@ package commentapi;
 
 service Comment {
     rpc CreateComment (CreateCommentRequest) returns (CreateCommentResponse);
-    rpc GetComment (GetCommentRequest) returns (CreateCommentResponse);
+    rpc GetComment (GetCommentRequest) returns (GetCommentResponse);
     rpc DeleteComment (DeleteCommentRequest) returns (DeleteCommentResponse);
     rpc UpdateComment (UpdateCommentRequest) returns (UpdateCommentResponse);
     rpc CreateReply (CreateReplyRequest) returns (CreateReplyResponse);
-    rpc GetReply (GetReplyRequest) returns (CreateReplyResponse);
+    rpc GetReply (GetReplyRequest) returns (GetReplyResponse);
     rpc DeleteReply (DeleteReplyRequest) returns (DeleteReplyResponse);
     rpc UpdateReply (UpdateReplyRequest) returns (UpdateReplyResponse);
 }
@@ -59,6 +59,17 @@ message CreateReplyResponse {
     int32 commentid = 9;
 }
 
+message GetReplyResponse {
+    string reply = 1;
+    bool isdeletedbyadmin = 2;
+    int32 userid = 3;
+    int32 replyid = 4;
+    int32 postid = 5;
+    int32 status = 6;
+    int32 likecount = 7;
+    int32 userlikes = 8;
+    int32 commentid = 9;
+}
 
 message UpdateCommentRequest{
     int32 commentid = 1;
@@ -95,6 +106,18 @@ message CreateCommentRequest {
 }
 
 message CreateCommentResponse {
+    string comment = 1;
+    bool isdeletedbyadmin = 2;
+    int32 userid = 3;
+    int32 replyid = 4;
+    int32 postid = 5;
+    int32 status = 6;
+    int32 likecount = 7;
+    int32 userlikes = 8;
+    int32 commentid = 9;
+}
+
+message GetCommentResponse {
     string comment = 1;
     bool isdeletedbyadmin = 2;
     int32 userid = 3;
