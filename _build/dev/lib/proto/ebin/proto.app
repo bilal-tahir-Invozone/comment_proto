@@ -15,6 +15,8 @@
                         'Elixir.Commentapi.GetCommentResponse',
                         'Elixir.Commentapi.GetReplyRequest',
                         'Elixir.Commentapi.GetReplyResponse',
+                        'Elixir.Commentapi.ListOfComment',
+                        'Elixir.Commentapi.ListOfReplies',
                         'Elixir.Commentapi.UpdateCommentRequest',
                         'Elixir.Commentapi.UpdateCommentResponse',
                         'Elixir.Commentapi.UpdateReplyRequest',

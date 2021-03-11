@@ -14,7 +14,17 @@ service Comment {
 }
 
 message UpdateReplyRequest{
-    int32 replyid = 1;
+    
+    string reply = 1;
+    bool isdeletedbyadmin = 2;
+    int32 userid = 3;
+    int32 replyid = 4;
+    int32 postid = 5;
+    int32 status = 6;
+    int32 likecount = 7;
+    int32 userlikes = 8;
+    int32 commentid = 9;
+
 }
 
 message UpdateReplyResponse{
@@ -79,7 +89,15 @@ message List_of_replies {
 
 
 message UpdateCommentRequest{
-    int32 commentid = 1;
+    string comment = 1;
+    bool isdeletedbyadmin = 2;
+    int32 userid = 3;
+    int32 replyid = 4;
+    int32 postid = 5;
+    int32 status = 6;
+    int32 likecount = 7;
+    int32 userlikes = 8;
+    int32 commentid = 9;
 }
 
 message UpdateCommentResponse{

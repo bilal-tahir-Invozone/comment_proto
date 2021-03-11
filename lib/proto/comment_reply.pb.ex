@@ -3,12 +3,38 @@ defmodule Commentapi.UpdateReplyRequest do
   use Protobuf, syntax: :proto3
 
   @type t :: %__MODULE__{
-          replyid: integer
+          reply: String.t(),
+          isdeletedbyadmin: boolean,
+          userid: integer,
+          replyid: integer,
+          postid: integer,
+          status: integer,
+          likecount: integer,
+          userlikes: integer,
+          commentid: integer
         }
 
-  defstruct [:replyid]
+  defstruct [
+    :reply,
+    :isdeletedbyadmin,
+    :userid,
+    :replyid,
+    :postid,
+    :status,
+    :likecount,
+    :userlikes,
+    :commentid
+  ]
 
-  field :replyid, 1, type: :int32
+  field :reply, 1, type: :string
+  field :isdeletedbyadmin, 2, type: :bool
+  field :userid, 3, type: :int32
+  field :replyid, 4, type: :int32
+  field :postid, 5, type: :int32
+  field :status, 6, type: :int32
+  field :likecount, 7, type: :int32
+  field :userlikes, 8, type: :int32
+  field :commentid, 9, type: :int32
 end
 
 defmodule Commentapi.UpdateReplyResponse do
@@ -198,12 +224,38 @@ defmodule Commentapi.UpdateCommentRequest do
   use Protobuf, syntax: :proto3
 
   @type t :: %__MODULE__{
+          comment: String.t(),
+          isdeletedbyadmin: boolean,
+          userid: integer,
+          replyid: integer,
+          postid: integer,
+          status: integer,
+          likecount: integer,
+          userlikes: integer,
           commentid: integer
         }
 
-  defstruct [:commentid]
+  defstruct [
+    :comment,
+    :isdeletedbyadmin,
+    :userid,
+    :replyid,
+    :postid,
+    :status,
+    :likecount,
+    :userlikes,
+    :commentid
+  ]
 
-  field :commentid, 1, type: :int32
+  field :comment, 1, type: :string
+  field :isdeletedbyadmin, 2, type: :bool
+  field :userid, 3, type: :int32
+  field :replyid, 4, type: :int32
+  field :postid, 5, type: :int32
+  field :status, 6, type: :int32
+  field :likecount, 7, type: :int32
+  field :userlikes, 8, type: :int32
+  field :commentid, 9, type: :int32
 end
 
 defmodule Commentapi.UpdateCommentResponse do
