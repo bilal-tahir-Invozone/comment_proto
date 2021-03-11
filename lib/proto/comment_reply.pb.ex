@@ -50,19 +50,6 @@ defmodule Commentapi.DeleteReplyRequest do
   field :replyid, 1, type: :int32
 end
 
-defmodule Commentapi.GetReplyRequest do
-  @moduledoc false
-  use Protobuf, syntax: :proto3
-
-  @type t :: %__MODULE__{
-          replyid: integer
-        }
-
-  defstruct [:replyid]
-
-  field :replyid, 1, type: :int32
-end
-
 defmodule Commentapi.CreateReplyRequest do
   @moduledoc false
   use Protobuf, syntax: :proto3
@@ -139,6 +126,19 @@ defmodule Commentapi.CreateReplyResponse do
   field :likecount, 7, type: :int32
   field :userlikes, 8, type: :int32
   field :commentid, 9, type: :int32
+end
+
+defmodule Commentapi.GetReplyRequest do
+  @moduledoc false
+  use Protobuf, syntax: :proto3
+
+  @type t :: %__MODULE__{
+          commentid: integer
+        }
+
+  defstruct [:commentid]
+
+  field :commentid, 1, type: :int32
 end
 
 defmodule Commentapi.GetReplyResponse do
@@ -232,19 +232,6 @@ defmodule Commentapi.DeleteCommentRequest do
   field :commentid, 1, type: :int32
 end
 
-defmodule Commentapi.GetCommentRequest do
-  @moduledoc false
-  use Protobuf, syntax: :proto3
-
-  @type t :: %__MODULE__{
-          commentid: integer
-        }
-
-  defstruct [:commentid]
-
-  field :commentid, 1, type: :int32
-end
-
 defmodule Commentapi.CreateCommentRequest do
   @moduledoc false
   use Protobuf, syntax: :proto3
@@ -321,6 +308,19 @@ defmodule Commentapi.CreateCommentResponse do
   field :likecount, 7, type: :int32
   field :userlikes, 8, type: :int32
   field :commentid, 9, type: :int32
+end
+
+defmodule Commentapi.GetCommentRequest do
+  @moduledoc false
+  use Protobuf, syntax: :proto3
+
+  @type t :: %__MODULE__{
+          postid: integer
+        }
+
+  defstruct [:postid]
+
+  field :postid, 1, type: :int32
 end
 
 defmodule Commentapi.GetCommentResponse do

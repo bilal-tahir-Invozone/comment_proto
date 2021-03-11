@@ -29,9 +29,6 @@ message DeleteReplyRequest{
     int32 replyid = 1;
 }
 
-message GetReplyRequest{
-    int32 replyid = 1;
-}
 
 
 message CreateReplyRequest {
@@ -58,6 +55,11 @@ message CreateReplyResponse {
     int32 userlikes = 8;
     int32 commentid = 9;
 }
+
+message GetReplyRequest{
+    int32 commentid = 1;
+}
+
 
 message GetReplyResponse {
     string reply = 1;
@@ -87,9 +89,6 @@ message DeleteCommentRequest{
     int32 commentid = 1;
 }
 
-message GetCommentRequest{
-    int32 commentid = 1;
-}
 
 
 message CreateCommentRequest {
@@ -115,6 +114,10 @@ message CreateCommentResponse {
     int32 likecount = 7;
     int32 userlikes = 8;
     int32 commentid = 9;
+}
+
+message GetCommentRequest{
+    int32 postid = 1;
 }
 
 message GetCommentResponse {
