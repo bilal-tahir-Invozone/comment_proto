@@ -146,6 +146,19 @@ defmodule Commentapi.GetReplyResponse do
   use Protobuf, syntax: :proto3
 
   @type t :: %__MODULE__{
+          replies: [Commentapi.ListOfReplies.t()]
+        }
+
+  defstruct [:replies]
+
+  field :replies, 1, repeated: true, type: Commentapi.ListOfReplies
+end
+
+defmodule Commentapi.ListOfReplies do
+  @moduledoc false
+  use Protobuf, syntax: :proto3
+
+  @type t :: %__MODULE__{
           reply: String.t(),
           isdeletedbyadmin: boolean,
           userid: integer,
@@ -324,6 +337,19 @@ defmodule Commentapi.GetCommentRequest do
 end
 
 defmodule Commentapi.GetCommentResponse do
+  @moduledoc false
+  use Protobuf, syntax: :proto3
+
+  @type t :: %__MODULE__{
+          comments: [Commentapi.ListOfComment.t()]
+        }
+
+  defstruct [:comments]
+
+  field :comments, 1, repeated: true, type: Commentapi.ListOfComment
+end
+
+defmodule Commentapi.ListOfComment do
   @moduledoc false
   use Protobuf, syntax: :proto3
 

@@ -62,6 +62,10 @@ message GetReplyRequest{
 
 
 message GetReplyResponse {
+    repeated List_of_replies replies = 1;
+}
+
+message List_of_replies {
     string reply = 1;
     bool isdeletedbyadmin = 2;
     int32 userid = 3;
@@ -72,6 +76,7 @@ message GetReplyResponse {
     int32 userlikes = 8;
     int32 commentid = 9;
 }
+
 
 message UpdateCommentRequest{
     int32 commentid = 1;
@@ -121,6 +126,10 @@ message GetCommentRequest{
 }
 
 message GetCommentResponse {
+    repeated List_of_comment comments = 1;
+}
+
+message List_of_comment {
     string comment = 1;
     bool isdeletedbyadmin = 2;
     int32 userid = 3;
@@ -131,5 +140,3 @@ message GetCommentResponse {
     int32 userlikes = 8;
     int32 commentid = 9;
 }
-
-
