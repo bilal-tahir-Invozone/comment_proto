@@ -172,15 +172,15 @@ defmodule Commentapi.GetReplyResponse do
   use Protobuf, syntax: :proto3
 
   @type t :: %__MODULE__{
-          replies: [Commentapi.ListOfReplies.t()]
+          replies: [Commentapi.Replies.t()]
         }
 
   defstruct [:replies]
 
-  field :replies, 1, repeated: true, type: Commentapi.ListOfReplies
+  field :replies, 1, repeated: true, type: Commentapi.Replies
 end
 
-defmodule Commentapi.ListOfReplies do
+defmodule Commentapi.Replies do
   @moduledoc false
   use Protobuf, syntax: :proto3
 
@@ -393,15 +393,15 @@ defmodule Commentapi.GetCommentResponse do
   use Protobuf, syntax: :proto3
 
   @type t :: %__MODULE__{
-          comments: [Commentapi.ListOfComment.t()]
+          comment: [Commentapi.Comment.t()]
         }
 
-  defstruct [:comments]
+  defstruct [:comment]
 
-  field :comments, 1, repeated: true, type: Commentapi.ListOfComment
+  field :comment, 1, repeated: true, type: Commentapi.Comment
 end
 
-defmodule Commentapi.ListOfComment do
+defmodule Commentapi.Comment do
   @moduledoc false
   use Protobuf, syntax: :proto3
 
