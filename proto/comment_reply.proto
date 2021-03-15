@@ -2,7 +2,7 @@ syntax = "proto3";
 
 package commentapi;
 
-service Comment {
+service CommentService {
     rpc CreateComment (CreateCommentRequest) returns (CreateCommentResponse);
     rpc GetComment (GetCommentRequest) returns (GetCommentResponse);
     rpc DeleteComment (DeleteCommentRequest) returns (DeleteCommentResponse);
@@ -72,10 +72,10 @@ message GetReplyRequest{
 
 
 message GetReplyResponse {
-    repeated replies replies = 1;
+    repeated Replies replies = 1;
 }
 
-message replies {
+message Replies {
     string reply = 1;
     bool isdeletedbyadmin = 2;
     int32 userid = 3;
@@ -145,10 +145,10 @@ message GetCommentRequest{
 
 
 message GetCommentResponse {
-    repeated comment comment = 1;
+    repeated Comment comments = 1;
 }
 
-message comment {
+message Comment {
     string comment = 1;
     bool isdeletedbyadmin = 2;
     int32 userid = 3;

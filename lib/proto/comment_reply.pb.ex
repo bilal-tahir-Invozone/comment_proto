@@ -393,12 +393,12 @@ defmodule Commentapi.GetCommentResponse do
   use Protobuf, syntax: :proto3
 
   @type t :: %__MODULE__{
-          comment: [Commentapi.Comment.t()]
+          comments: [Commentapi.Comment.t()]
         }
 
-  defstruct [:comment]
+  defstruct [:comments]
 
-  field :comment, 1, repeated: true, type: Commentapi.Comment
+  field :comments, 1, repeated: true, type: Commentapi.Comment
 end
 
 defmodule Commentapi.Comment do
@@ -440,9 +440,9 @@ defmodule Commentapi.Comment do
   field :commentid, 9, type: :int32
 end
 
-defmodule Commentapi.Comment.Service do
+defmodule Commentapi.CommentService.Service do
   @moduledoc false
-  use GRPC.Service, name: "commentapi.Comment"
+  use GRPC.Service, name: "commentapi.CommentService"
 
   rpc :CreateComment, Commentapi.CreateCommentRequest, Commentapi.CreateCommentResponse
 
@@ -461,7 +461,7 @@ defmodule Commentapi.Comment.Service do
   rpc :UpdateReply, Commentapi.UpdateReplyRequest, Commentapi.UpdateReplyResponse
 end
 
-defmodule Commentapi.Comment.Stub do
+defmodule Commentapi.CommentService.Stub do
   @moduledoc false
-  use GRPC.Stub, service: Commentapi.Comment.Service
+  use GRPC.Stub, service: Commentapi.CommentService.Service
 end
