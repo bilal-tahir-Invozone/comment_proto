@@ -149,7 +149,7 @@ message GetCommentResponse {
 }
 
 message Comment {
-    string comment = 1;
+    string comments = 1;
     bool isdeletedbyadmin = 2;
     int32 userid = 3;
     int32 replyid = 4;

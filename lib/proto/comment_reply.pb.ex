@@ -406,7 +406,7 @@ defmodule Commentapi.Comment do
   use Protobuf, syntax: :proto3
 
   @type t :: %__MODULE__{
-          comment: String.t(),
+          comments: String.t(),
           isdeletedbyadmin: boolean,
           userid: integer,
           replyid: integer,
@@ -418,7 +418,7 @@ defmodule Commentapi.Comment do
         }
 
   defstruct [
-    :comment,
+    :comments,
     :isdeletedbyadmin,
     :userid,
     :replyid,
@@ -429,7 +429,7 @@ defmodule Commentapi.Comment do
     :commentid
   ]
 
-  field :comment, 1, type: :string
+  field :comments, 1, type: :string
   field :isdeletedbyadmin, 2, type: :bool
   field :userid, 3, type: :int32
   field :replyid, 4, type: :int32
