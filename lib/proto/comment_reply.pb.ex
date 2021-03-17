@@ -239,7 +239,6 @@ defmodule Commentapi.UpdateCommentRequest do
           comment: String.t(),
           isdeletedbyadmin: boolean,
           userid: String.t(),
-          replyid: String.t(),
           postid: String.t(),
           status: integer,
           likecount: integer,
@@ -252,7 +251,6 @@ defmodule Commentapi.UpdateCommentRequest do
     :comment,
     :isdeletedbyadmin,
     :userid,
-    :replyid,
     :postid,
     :status,
     :likecount,
@@ -264,13 +262,12 @@ defmodule Commentapi.UpdateCommentRequest do
   field :comment, 1, type: :string
   field :isdeletedbyadmin, 2, type: :bool
   field :userid, 3, type: :string
-  field :replyid, 4, type: :string
-  field :postid, 5, type: :string
-  field :status, 6, type: :int32
-  field :likecount, 7, type: :int32
-  field :userlikes, 8, type: :int32
-  field :commentid, 9, type: :string
-  field :media_url, 10, type: :string
+  field :postid, 4, type: :string
+  field :status, 5, type: :int32
+  field :likecount, 6, type: :int32
+  field :userlikes, 7, type: :int32
+  field :commentid, 8, type: :string
+  field :media_url, 9, type: :string
 end
 
 defmodule Commentapi.UpdateCommentResponse do
@@ -320,7 +317,6 @@ defmodule Commentapi.CreateCommentRequest do
           comment: String.t(),
           isdeletedbyadmin: boolean,
           userid: String.t(),
-          replyid: String.t(),
           postid: String.t(),
           status: integer,
           likecount: integer,
@@ -333,7 +329,6 @@ defmodule Commentapi.CreateCommentRequest do
     :comment,
     :isdeletedbyadmin,
     :userid,
-    :replyid,
     :postid,
     :status,
     :likecount,
@@ -345,13 +340,12 @@ defmodule Commentapi.CreateCommentRequest do
   field :comment, 1, type: :string
   field :isdeletedbyadmin, 2, type: :bool
   field :userid, 3, type: :string
-  field :replyid, 4, type: :string
-  field :postid, 5, type: :string
-  field :status, 6, type: :int32
-  field :likecount, 7, type: :int32
-  field :userlikes, 8, type: :int32
-  field :commentid, 9, type: :string
-  field :media_url, 10, type: :string
+  field :postid, 4, type: :string
+  field :status, 5, type: :int32
+  field :likecount, 6, type: :int32
+  field :userlikes, 7, type: :int32
+  field :commentid, 8, type: :string
+  field :media_url, 9, type: :string
 end
 
 defmodule Commentapi.CreateCommentResponse do
@@ -362,7 +356,6 @@ defmodule Commentapi.CreateCommentResponse do
           comment: String.t(),
           isdeletedbyadmin: boolean,
           userid: String.t(),
-          replyid: String.t(),
           postid: String.t(),
           status: integer,
           likecount: integer,
@@ -375,7 +368,6 @@ defmodule Commentapi.CreateCommentResponse do
     :comment,
     :isdeletedbyadmin,
     :userid,
-    :replyid,
     :postid,
     :status,
     :likecount,
@@ -387,13 +379,12 @@ defmodule Commentapi.CreateCommentResponse do
   field :comment, 1, type: :string
   field :isdeletedbyadmin, 2, type: :bool
   field :userid, 3, type: :string
-  field :replyid, 4, type: :string
-  field :postid, 5, type: :string
-  field :status, 6, type: :int32
-  field :likecount, 7, type: :int32
-  field :userlikes, 8, type: :int32
-  field :commentid, 9, type: :string
-  field :media_url, 10, type: :string
+  field :postid, 4, type: :string
+  field :status, 5, type: :int32
+  field :likecount, 6, type: :int32
+  field :userlikes, 7, type: :int32
+  field :commentid, 8, type: :string
+  field :media_url, 9, type: :string
 end
 
 defmodule Commentapi.GetCommentRequest do
@@ -430,7 +421,6 @@ defmodule Commentapi.Comment do
           comments: String.t(),
           isdeletedbyadmin: boolean,
           userid: String.t(),
-          replyid: String.t(),
           postid: String.t(),
           status: integer,
           likecount: integer,
@@ -443,7 +433,6 @@ defmodule Commentapi.Comment do
     :comments,
     :isdeletedbyadmin,
     :userid,
-    :replyid,
     :postid,
     :status,
     :likecount,
@@ -455,13 +444,12 @@ defmodule Commentapi.Comment do
   field :comments, 1, type: :string
   field :isdeletedbyadmin, 2, type: :bool
   field :userid, 3, type: :string
-  field :replyid, 4, type: :string
-  field :postid, 5, type: :string
-  field :status, 6, type: :int32
-  field :likecount, 7, type: :int32
-  field :userlikes, 8, type: :int32
-  field :commentid, 9, type: :string
-  field :media_url, 10, type: :string
+  field :postid, 4, type: :string
+  field :status, 5, type: :int32
+  field :likecount, 6, type: :int32
+  field :userlikes, 7, type: :int32
+  field :commentid, 8, type: :string
+  field :media_url, 9, type: :string
 end
 
 defmodule Commentapi.CommentService.Service do
