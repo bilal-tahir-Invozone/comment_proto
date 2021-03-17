@@ -5,13 +5,13 @@ defmodule Commentapi.UpdateReplyRequest do
   @type t :: %__MODULE__{
           reply: String.t(),
           isdeletedbyadmin: boolean,
-          userid: integer,
-          replyid: integer,
-          postid: integer,
+          userid: String.t(),
+          replyid: String.t(),
+          postid: String.t(),
           status: integer,
           likecount: integer,
           userlikes: integer,
-          commentid: integer,
+          commentid: String.t(),
           media_url: String.t()
         }
 
@@ -30,13 +30,13 @@ defmodule Commentapi.UpdateReplyRequest do
 
   field :reply, 1, type: :string
   field :isdeletedbyadmin, 2, type: :bool
-  field :userid, 3, type: :int32
-  field :replyid, 4, type: :int32
-  field :postid, 5, type: :int32
+  field :userid, 3, type: :string
+  field :replyid, 4, type: :string
+  field :postid, 5, type: :string
   field :status, 6, type: :int32
   field :likecount, 7, type: :int32
   field :userlikes, 8, type: :int32
-  field :commentid, 9, type: :int32
+  field :commentid, 9, type: :string
   field :media_url, 10, type: :string
 end
 
@@ -71,12 +71,12 @@ defmodule Commentapi.DeleteReplyRequest do
   use Protobuf, syntax: :proto3
 
   @type t :: %__MODULE__{
-          replyid: integer
+          replyid: String.t()
         }
 
   defstruct [:replyid]
 
-  field :replyid, 1, type: :int32
+  field :replyid, 1, type: :string
 end
 
 defmodule Commentapi.CreateReplyRequest do
@@ -86,13 +86,13 @@ defmodule Commentapi.CreateReplyRequest do
   @type t :: %__MODULE__{
           reply: String.t(),
           isdeletedbyadmin: boolean,
-          userid: integer,
-          replyid: integer,
-          postid: integer,
+          userid: String.t(),
+          replyid: String.t(),
+          postid: String.t(),
           status: integer,
           likecount: integer,
           userlikes: integer,
-          commentid: integer,
+          commentid: String.t(),
           media_url: String.t()
         }
 
@@ -111,13 +111,13 @@ defmodule Commentapi.CreateReplyRequest do
 
   field :reply, 1, type: :string
   field :isdeletedbyadmin, 2, type: :bool
-  field :userid, 3, type: :int32
-  field :replyid, 4, type: :int32
-  field :postid, 5, type: :int32
+  field :userid, 3, type: :string
+  field :replyid, 4, type: :string
+  field :postid, 5, type: :string
   field :status, 6, type: :int32
   field :likecount, 7, type: :int32
   field :userlikes, 8, type: :int32
-  field :commentid, 9, type: :int32
+  field :commentid, 9, type: :string
   field :media_url, 10, type: :string
 end
 
@@ -128,13 +128,13 @@ defmodule Commentapi.CreateReplyResponse do
   @type t :: %__MODULE__{
           reply: String.t(),
           isdeletedbyadmin: boolean,
-          userid: integer,
-          replyid: integer,
-          postid: integer,
+          userid: String.t(),
+          replyid: String.t(),
+          postid: String.t(),
           status: integer,
           likecount: integer,
           userlikes: integer,
-          commentid: integer,
+          commentid: String.t(),
           media_url: String.t()
         }
 
@@ -153,13 +153,13 @@ defmodule Commentapi.CreateReplyResponse do
 
   field :reply, 1, type: :string
   field :isdeletedbyadmin, 2, type: :bool
-  field :userid, 3, type: :int32
-  field :replyid, 4, type: :int32
-  field :postid, 5, type: :int32
+  field :userid, 3, type: :string
+  field :replyid, 4, type: :string
+  field :postid, 5, type: :string
   field :status, 6, type: :int32
   field :likecount, 7, type: :int32
   field :userlikes, 8, type: :int32
-  field :commentid, 9, type: :int32
+  field :commentid, 9, type: :string
   field :media_url, 10, type: :string
 end
 
@@ -168,12 +168,12 @@ defmodule Commentapi.GetReplyRequest do
   use Protobuf, syntax: :proto3
 
   @type t :: %__MODULE__{
-          commentid: integer
+          commentid: String.t()
         }
 
   defstruct [:commentid]
 
-  field :commentid, 1, type: :int32
+  field :commentid, 1, type: :string
 end
 
 defmodule Commentapi.GetReplyResponse do
@@ -196,13 +196,13 @@ defmodule Commentapi.Replies do
   @type t :: %__MODULE__{
           reply: String.t(),
           isdeletedbyadmin: boolean,
-          userid: integer,
-          replyid: integer,
-          postid: integer,
+          userid: String.t(),
+          replyid: String.t(),
+          postid: String.t(),
           status: integer,
           likecount: integer,
           userlikes: integer,
-          commentid: integer,
+          commentid: String.t(),
           media_url: String.t()
         }
 
@@ -221,13 +221,13 @@ defmodule Commentapi.Replies do
 
   field :reply, 1, type: :string
   field :isdeletedbyadmin, 2, type: :bool
-  field :userid, 3, type: :int32
-  field :replyid, 4, type: :int32
-  field :postid, 5, type: :int32
+  field :userid, 3, type: :string
+  field :replyid, 4, type: :string
+  field :postid, 5, type: :string
   field :status, 6, type: :int32
   field :likecount, 7, type: :int32
   field :userlikes, 8, type: :int32
-  field :commentid, 9, type: :int32
+  field :commentid, 9, type: :string
   field :media_url, 10, type: :string
 end
 
@@ -238,13 +238,13 @@ defmodule Commentapi.UpdateCommentRequest do
   @type t :: %__MODULE__{
           comment: String.t(),
           isdeletedbyadmin: boolean,
-          userid: integer,
-          replyid: integer,
-          postid: integer,
+          userid: String.t(),
+          replyid: String.t(),
+          postid: String.t(),
           status: integer,
           likecount: integer,
           userlikes: integer,
-          commentid: integer,
+          commentid: String.t(),
           media_url: String.t()
         }
 
@@ -263,13 +263,13 @@ defmodule Commentapi.UpdateCommentRequest do
 
   field :comment, 1, type: :string
   field :isdeletedbyadmin, 2, type: :bool
-  field :userid, 3, type: :int32
-  field :replyid, 4, type: :int32
-  field :postid, 5, type: :int32
+  field :userid, 3, type: :string
+  field :replyid, 4, type: :string
+  field :postid, 5, type: :string
   field :status, 6, type: :int32
   field :likecount, 7, type: :int32
   field :userlikes, 8, type: :int32
-  field :commentid, 9, type: :int32
+  field :commentid, 9, type: :string
   field :media_url, 10, type: :string
 end
 
@@ -304,12 +304,12 @@ defmodule Commentapi.DeleteCommentRequest do
   use Protobuf, syntax: :proto3
 
   @type t :: %__MODULE__{
-          commentid: integer
+          commentid: String.t()
         }
 
   defstruct [:commentid]
 
-  field :commentid, 1, type: :int32
+  field :commentid, 1, type: :string
 end
 
 defmodule Commentapi.CreateCommentRequest do
@@ -319,13 +319,13 @@ defmodule Commentapi.CreateCommentRequest do
   @type t :: %__MODULE__{
           comment: String.t(),
           isdeletedbyadmin: boolean,
-          userid: integer,
-          replyid: integer,
-          postid: integer,
+          userid: String.t(),
+          replyid: String.t(),
+          postid: String.t(),
           status: integer,
           likecount: integer,
           userlikes: integer,
-          commentid: integer,
+          commentid: String.t(),
           media_url: String.t()
         }
 
@@ -344,13 +344,13 @@ defmodule Commentapi.CreateCommentRequest do
 
   field :comment, 1, type: :string
   field :isdeletedbyadmin, 2, type: :bool
-  field :userid, 3, type: :int32
-  field :replyid, 4, type: :int32
-  field :postid, 5, type: :int32
+  field :userid, 3, type: :string
+  field :replyid, 4, type: :string
+  field :postid, 5, type: :string
   field :status, 6, type: :int32
   field :likecount, 7, type: :int32
   field :userlikes, 8, type: :int32
-  field :commentid, 9, type: :int32
+  field :commentid, 9, type: :string
   field :media_url, 10, type: :string
 end
 
@@ -361,13 +361,13 @@ defmodule Commentapi.CreateCommentResponse do
   @type t :: %__MODULE__{
           comment: String.t(),
           isdeletedbyadmin: boolean,
-          userid: integer,
-          replyid: integer,
-          postid: integer,
+          userid: String.t(),
+          replyid: String.t(),
+          postid: String.t(),
           status: integer,
           likecount: integer,
           userlikes: integer,
-          commentid: integer,
+          commentid: String.t(),
           media_url: String.t()
         }
 
@@ -386,13 +386,13 @@ defmodule Commentapi.CreateCommentResponse do
 
   field :comment, 1, type: :string
   field :isdeletedbyadmin, 2, type: :bool
-  field :userid, 3, type: :int32
-  field :replyid, 4, type: :int32
-  field :postid, 5, type: :int32
+  field :userid, 3, type: :string
+  field :replyid, 4, type: :string
+  field :postid, 5, type: :string
   field :status, 6, type: :int32
   field :likecount, 7, type: :int32
   field :userlikes, 8, type: :int32
-  field :commentid, 9, type: :int32
+  field :commentid, 9, type: :string
   field :media_url, 10, type: :string
 end
 
@@ -401,12 +401,12 @@ defmodule Commentapi.GetCommentRequest do
   use Protobuf, syntax: :proto3
 
   @type t :: %__MODULE__{
-          postid: integer
+          postid: String.t()
         }
 
   defstruct [:postid]
 
-  field :postid, 1, type: :int32
+  field :postid, 1, type: :string
 end
 
 defmodule Commentapi.GetCommentResponse do
@@ -429,13 +429,13 @@ defmodule Commentapi.Comment do
   @type t :: %__MODULE__{
           comments: String.t(),
           isdeletedbyadmin: boolean,
-          userid: integer,
-          replyid: integer,
-          postid: integer,
+          userid: String.t(),
+          replyid: String.t(),
+          postid: String.t(),
           status: integer,
           likecount: integer,
           userlikes: integer,
-          commentid: integer,
+          commentid: String.t(),
           media_url: String.t()
         }
 
@@ -454,13 +454,13 @@ defmodule Commentapi.Comment do
 
   field :comments, 1, type: :string
   field :isdeletedbyadmin, 2, type: :bool
-  field :userid, 3, type: :int32
-  field :replyid, 4, type: :int32
-  field :postid, 5, type: :int32
+  field :userid, 3, type: :string
+  field :replyid, 4, type: :string
+  field :postid, 5, type: :string
   field :status, 6, type: :int32
   field :likecount, 7, type: :int32
   field :userlikes, 8, type: :int32
-  field :commentid, 9, type: :int32
+  field :commentid, 9, type: :string
   field :media_url, 10, type: :string
 end
 

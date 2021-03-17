@@ -17,13 +17,13 @@ message UpdateReplyRequest{
     
     string reply = 1;
     bool isdeletedbyadmin = 2;
-    int32 userid = 3;
-    int32 replyid = 4;
-    int32 postid = 5;
+    string userid = 3;
+    string replyid = 4;
+    string postid = 5;
     int32 status = 6;
     int32 likecount = 7;
     int32 userlikes = 8;
-    int32 commentid = 9;
+    string commentid = 9;
     string media_url = 10;
 
 
@@ -38,7 +38,7 @@ message DeleteReplyResponse{
 }
 
 message DeleteReplyRequest{
-    int32 replyid = 1;
+    string replyid = 1;
 }
 
 
@@ -47,13 +47,13 @@ message CreateReplyRequest {
 
     string reply = 1;
     bool isdeletedbyadmin = 2;
-    int32 userid = 3;
-    int32 replyid = 4;
-    int32 postid = 5;
+    string userid = 3;
+    string replyid = 4;
+    string postid = 5;
     int32 status = 6;
     int32 likecount = 7;
     int32 userlikes = 8;
-    int32 commentid = 9;
+    string commentid = 9;
     string media_url = 10;
 
 }
@@ -61,19 +61,19 @@ message CreateReplyRequest {
 message CreateReplyResponse {
     string reply = 1;
     bool isdeletedbyadmin = 2;
-    int32 userid = 3;
-    int32 replyid = 4;
-    int32 postid = 5;
+    string userid = 3;
+    string replyid = 4;
+    string postid = 5;
     int32 status = 6;
     int32 likecount = 7;
     int32 userlikes = 8;
-    int32 commentid = 9;
+    string commentid = 9;
     string media_url = 10;
 
 }
 
 message GetReplyRequest{
-    int32 commentid = 1;
+    string commentid = 1;
 }
 
 
@@ -84,13 +84,13 @@ message GetReplyResponse {
 message Replies {
     string reply = 1;
     bool isdeletedbyadmin = 2;
-    int32 userid = 3;
-    int32 replyid = 4;
-    int32 postid = 5;
+    string userid = 3;
+    string replyid = 4;
+    string postid = 5;
     int32 status = 6;
     int32 likecount = 7;
     int32 userlikes = 8;
-    int32 commentid = 9;
+    string commentid = 9;
     string media_url = 10;
 
 }
@@ -99,13 +99,13 @@ message Replies {
 message UpdateCommentRequest{
     string comment = 1;
     bool isdeletedbyadmin = 2;
-    int32 userid = 3;
-    int32 replyid = 4;
-    int32 postid = 5;
+    string userid = 3;
+    string replyid = 4;
+    string postid = 5;
     int32 status = 6;
     int32 likecount = 7;
     int32 userlikes = 8;
-    int32 commentid = 9;
+    string commentid = 9;
     string media_url = 10;
 
 }
@@ -119,7 +119,7 @@ message DeleteCommentResponse{
 }
 
 message DeleteCommentRequest{
-    int32 commentid = 1;
+    string commentid = 1;
 }
 
 
@@ -128,13 +128,13 @@ message CreateCommentRequest {
 
     string comment = 1;
     bool isdeletedbyadmin = 2;
-    int32 userid = 3;
-    int32 replyid = 4;
-    int32 postid = 5;
+    string userid = 3;
+    string replyid = 4;
+    string postid = 5;
     int32 status = 6;
     int32 likecount = 7;
     int32 userlikes = 8;
-    int32 commentid = 9;
+    string commentid = 9;
     string media_url = 10;
 
 }
@@ -142,18 +142,18 @@ message CreateCommentRequest {
 message CreateCommentResponse {
     string comment = 1;
     bool isdeletedbyadmin = 2;
-    int32 userid = 3;
-    int32 replyid = 4;
-    int32 postid = 5;
+    string userid = 3;
+    string replyid = 4;
+    string postid = 5;
     int32 status = 6;
     int32 likecount = 7;
     int32 userlikes = 8;
-    int32 commentid = 9;
+    string commentid = 9;
     string media_url = 10;
 }
 
 message GetCommentRequest{
-    int32 postid = 1;
+    string postid = 1;
 }
 
 
@@ -164,13 +164,13 @@ message GetCommentResponse {
 message Comment {
     string comments = 1;
     bool isdeletedbyadmin = 2;
-    int32 userid = 3;
-    int32 replyid = 4;
-    int32 postid = 5;
+    string userid = 3;
+    string replyid = 4;
+    string postid = 5;
     int32 status = 6;
     int32 likecount = 7;
     int32 userlikes = 8;
-    int32 commentid = 9;
+    string commentid = 9;
     string media_url = 10;
 
 }
