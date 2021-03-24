@@ -54,7 +54,7 @@ message CreateReplyRequest {
     int32 likecount = 7;
     int32 userlikes = 8;
     string commentid = 9;
-    string media_url = 10;
+    repeated Media media_url = 10;
 
 }
 
@@ -68,8 +68,11 @@ message CreateReplyResponse {
     int32 likecount = 7;
     int32 userlikes = 8;
     string commentid = 9;
-    string media_url = 10;
+    repeated Media media_url = 10;
+}
 
+message Media {
+    string media_url = 11;
 }
 
 message GetReplyRequest{
