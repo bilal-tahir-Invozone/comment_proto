@@ -18,7 +18,7 @@ message UpdateReplyRequest{
     string reply = 1;
     bool isdeletedbyadmin = 2;
     string userid = 3;
-    string replyid = 4;
+    string id = 4;
     string postid = 5;
     int32 status = 6;
     int32 likecount = 7;
@@ -38,7 +38,7 @@ message DeleteReplyResponse{
 }
 
 message DeleteReplyRequest{
-    string replyid = 1;
+    string id = 1;
 }
 
 
@@ -48,13 +48,12 @@ message CreateReplyRequest {
     string reply = 1;
     bool isdeletedbyadmin = 2;
     string userid = 3;
-    string replyid = 4;
-    string postid = 5;
-    int32 status = 6;
-    int32 likecount = 7;
-    int32 userlikes = 8;
-    string commentid = 9;
-    repeated Media media_url = 10;
+    string postid = 4;
+    int32 status = 5;
+    int32 likecount = 6;
+    int32 userlikes = 7;
+    string commentid = 8;
+    string media_url = 9;
 
 }
 
@@ -62,18 +61,15 @@ message CreateReplyResponse {
     string reply = 1;
     bool isdeletedbyadmin = 2;
     string userid = 3;
-    string replyid = 4;
-    string postid = 5;
-    int32 status = 6;
-    int32 likecount = 7;
-    int32 userlikes = 8;
-    string commentid = 9;
-    repeated Media media_url = 10;
+    string postid = 4;
+    int32 status = 5;
+    int32 likecount = 6;
+    int32 userlikes = 7;
+    string commentid = 8;
+    string media_url = 9;
 }
 
-message Media {
-    string media_url = 11;
-}
+
 
 message GetReplyRequest{
     string commentid = 1;
@@ -88,13 +84,13 @@ message Replies {
     string reply = 1;
     bool isdeletedbyadmin = 2;
     string userid = 3;
-    string replyid = 4;
+    string id = 4;
     string postid = 5;
     int32 status = 6;
     int32 likecount = 7;
     int32 userlikes = 8;
     string commentid = 9;
-    string media_url = 10;
+    Media media_url = 10;
 
 }
 
@@ -107,7 +103,7 @@ message UpdateCommentRequest{
     int32 status = 5;
     int32 likecount = 6;
     int32 userlikes = 7;
-    string commentid = 8;
+    string id = 8;
     string media_url = 9;
 
 }
@@ -121,7 +117,7 @@ message DeleteCommentResponse{
 }
 
 message DeleteCommentRequest{
-    string commentid = 1;
+    string id = 1;
 }
 
 
@@ -135,8 +131,9 @@ message CreateCommentRequest {
     int32 status = 5;
     int32 likecount = 6;
     int32 userlikes = 7;
-    string commentid = 8;
+    string id = 8;
     string media_url = 9;
+    
 
 }
 
@@ -148,8 +145,9 @@ message CreateCommentResponse {
     int32 status = 5;
     int32 likecount = 6;
     int32 userlikes = 7;
-    string commentid = 8;
+    string id = 8;
     string media_url = 9;
+    
 }
 
 message GetCommentRequest{
@@ -169,7 +167,11 @@ message Comment {
     int32 status = 5;
     int32 likecount = 6;
     int32 userlikes = 7;
-    string commentid = 8;
-    string media_url = 9;
+    string id = 8;
+    Media medias = 10;
+
+}
+message Media {
+    string media_url = 1;
 
 }
