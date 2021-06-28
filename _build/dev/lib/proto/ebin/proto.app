@@ -16,6 +16,7 @@
                         'Elixir.Commentapi.GetCommentResponse',
                         'Elixir.Commentapi.GetReplyRequest',
                         'Elixir.Commentapi.GetReplyResponse',
+                        'Elixir.Commentapi.Media','Elixir.Commentapi.Medias',
                         'Elixir.Commentapi.Replies',
                         'Elixir.Commentapi.UpdateCommentRequest',
                         'Elixir.Commentapi.UpdateCommentResponse',
