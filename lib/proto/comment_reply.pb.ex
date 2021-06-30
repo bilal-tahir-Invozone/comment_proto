@@ -72,11 +72,6 @@ defmodule Commentapi.DeleteReplyRequest do
         }
   defstruct [:id]
 
-<<<<<<< HEAD
-=======
-  defstruct [:id]
-
->>>>>>> 28e49559c2b2f0d587f5836a8477d29fe892ebf1
   field :id, 1, type: :string
 end
 
@@ -194,7 +189,7 @@ defmodule Commentapi.Replies do
           likecount: integer,
           userlikes: integer,
           commentid: String.t(),
-          media_url: Commentapi.Media.t() | nil
+          medias: Commentapi.Media.t() | nil
         }
   defstruct [
     :reply,
@@ -218,7 +213,7 @@ defmodule Commentapi.Replies do
   field :likecount, 7, type: :int32
   field :userlikes, 8, type: :int32
   field :commentid, 9, type: :string
-  field :media_url, 10, type: Commentapi.Media
+  field :medias, 10, type: Commentapi.Media
 end
 
 defmodule Commentapi.UpdateCommentRequest do
@@ -290,8 +285,6 @@ defmodule Commentapi.DeleteCommentRequest do
   @type t :: %__MODULE__{
           id: String.t()
         }
-  defstruct [:id]
-
   defstruct [:id]
 
   field :id, 1, type: :string
