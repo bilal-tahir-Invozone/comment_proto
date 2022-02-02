@@ -126,7 +126,9 @@ defmodule Commentapi.CreateReplyResponse do
           likecount: integer,
           userlikes: integer,
           commentid: String.t(),
-          media_url: String.t()
+          media_url: String.t(),
+          updated_at: String.t(),
+          inserted_at: String.t()
         }
   defstruct [
     :reply,
@@ -137,7 +139,9 @@ defmodule Commentapi.CreateReplyResponse do
     :likecount,
     :userlikes,
     :commentid,
-    :media_url
+    :media_url,
+    :updated_at,
+    :inserted_at
   ]
 
   field :reply, 1, type: :string
@@ -149,6 +153,8 @@ defmodule Commentapi.CreateReplyResponse do
   field :userlikes, 7, type: :int32
   field :commentid, 8, type: :string
   field :media_url, 9, type: :string
+  field :updated_at, 10, type: :string
+  field :inserted_at, 11, type: :string
 end
 
 defmodule Commentapi.GetReplyRequest do
@@ -189,7 +195,9 @@ defmodule Commentapi.Replies do
           likecount: integer,
           userlikes: integer,
           commentid: String.t(),
-          medias: Commentapi.Media.t() | nil
+          medias: Commentapi.Media.t() | nil,
+          updated_at: String.t(),
+          inserted_at: String.t()
         }
   defstruct [
     :reply,
@@ -201,7 +209,9 @@ defmodule Commentapi.Replies do
     :likecount,
     :userlikes,
     :commentid,
-    :medias
+    :medias,
+    :updated_at,
+    :inserted_at
   ]
 
   field :reply, 1, type: :string
@@ -214,6 +224,8 @@ defmodule Commentapi.Replies do
   field :userlikes, 8, type: :int32
   field :commentid, 9, type: :string
   field :medias, 10, type: Commentapi.Media
+  field :updated_at, 11, type: :string
+  field :inserted_at, 12, type: :string
 end
 
 defmodule Commentapi.UpdateCommentRequest do
@@ -341,7 +353,9 @@ defmodule Commentapi.CreateCommentResponse do
           likecount: integer,
           userlikes: integer,
           id: String.t(),
-          media_url: String.t()
+          media_url: String.t(),
+          updated_at: String.t(),
+          inserted_at: String.t()
         }
   defstruct [
     :comment,
@@ -352,7 +366,9 @@ defmodule Commentapi.CreateCommentResponse do
     :likecount,
     :userlikes,
     :id,
-    :media_url
+    :media_url,
+    :updated_at,
+    :inserted_at
   ]
 
   field :comment, 1, type: :string
@@ -364,6 +380,8 @@ defmodule Commentapi.CreateCommentResponse do
   field :userlikes, 7, type: :int32
   field :id, 8, type: :string
   field :media_url, 9, type: :string
+  field :updated_at, 10, type: :string
+  field :inserted_at, 11, type: :string
 end
 
 defmodule Commentapi.GetCommentRequest do
@@ -403,7 +421,9 @@ defmodule Commentapi.Comment do
           likecount: integer,
           userlikes: integer,
           id: String.t(),
-          medias: Commentapi.Media.t() | nil
+          medias: Commentapi.Media.t() | nil,
+          updated_at: String.t(),
+          inserted_at: String.t()
         }
   defstruct [
     :comments,
@@ -414,7 +434,9 @@ defmodule Commentapi.Comment do
     :likecount,
     :userlikes,
     :id,
-    :medias
+    :medias,
+    :updated_at,
+    :inserted_at
   ]
 
   field :comments, 1, type: :string
@@ -426,6 +448,8 @@ defmodule Commentapi.Comment do
   field :userlikes, 7, type: :int32
   field :id, 8, type: :string
   field :medias, 10, type: Commentapi.Media
+  field :updated_at, 11, type: :string
+  field :inserted_at, 12, type: :string
 end
 
 defmodule Commentapi.Media do

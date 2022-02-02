@@ -91,6 +91,7 @@ message Replies {
     int32 userlikes = 8;
     string commentid = 9;
     Media media_url = 10;
+    string date = 11;
 
 }
 
@@ -169,6 +170,7 @@ message Comment {
     int32 userlikes = 7;
     string id = 8;
     Media medias = 10;
+    string date = 11;
 
 }
 message Media {
