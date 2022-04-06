@@ -9,7 +9,7 @@ defmodule Commentapi.UpdateReplyRequest do
           id: String.t(),
           postid: String.t(),
           status: integer,
-          likecount: integer,
+          # count: integer,
           userlikes: integer,
           commentid: String.t(),
           media_url: String.t()
@@ -21,7 +21,7 @@ defmodule Commentapi.UpdateReplyRequest do
     :id,
     :postid,
     :status,
-    :likecount,
+    # :count,
     :userlikes,
     :commentid,
     :media_url
@@ -33,7 +33,7 @@ defmodule Commentapi.UpdateReplyRequest do
   field :id, 4, type: :string
   field :postid, 5, type: :string
   field :status, 6, type: :int32
-  field :likecount, 7, type: :int32
+  # field :count, 7, type: :int32
   field :userlikes, 8, type: :int32
   field :commentid, 9, type: :string
   field :media_url, 10, type: :string
@@ -85,7 +85,7 @@ defmodule Commentapi.CreateReplyRequest do
           userid: String.t(),
           postid: String.t(),
           status: integer,
-          likecount: integer,
+          # count: integer,
           userlikes: integer,
           commentid: String.t(),
           media_url: String.t()
@@ -96,7 +96,7 @@ defmodule Commentapi.CreateReplyRequest do
     :userid,
     :postid,
     :status,
-    :likecount,
+    # :count,
     :userlikes,
     :commentid,
     :media_url
@@ -107,7 +107,7 @@ defmodule Commentapi.CreateReplyRequest do
   field :userid, 3, type: :string
   field :postid, 4, type: :string
   field :status, 5, type: :int32
-  field :likecount, 6, type: :int32
+  # field :count, 6, type: :int32
   field :userlikes, 7, type: :int32
   field :commentid, 8, type: :string
   field :media_url, 9, type: :string
@@ -123,7 +123,7 @@ defmodule Commentapi.CreateReplyResponse do
           userid: String.t(),
           postid: String.t(),
           status: integer,
-          likecount: integer,
+          # count: integer,
           userlikes: integer,
           commentid: String.t(),
           media_url: String.t(),
@@ -136,7 +136,7 @@ defmodule Commentapi.CreateReplyResponse do
     :userid,
     :postid,
     :status,
-    :likecount,
+    # :count,
     :userlikes,
     :commentid,
     :media_url,
@@ -149,7 +149,7 @@ defmodule Commentapi.CreateReplyResponse do
   field :userid, 3, type: :string
   field :postid, 4, type: :string
   field :status, 5, type: :int32
-  field :likecount, 6, type: :int32
+  # field :count, 6, type: :int32
   field :userlikes, 7, type: :int32
   field :commentid, 8, type: :string
   field :media_url, 9, type: :string
@@ -192,7 +192,7 @@ defmodule Commentapi.Replies do
           id: String.t(),
           postid: String.t(),
           status: integer,
-          likecount: integer,
+          count: integer,
           userlikes: integer,
           commentid: String.t(),
           medias: Commentapi.Media.t() | nil,
@@ -206,7 +206,7 @@ defmodule Commentapi.Replies do
     :id,
     :postid,
     :status,
-    :likecount,
+    :count,
     :userlikes,
     :commentid,
     :medias,
@@ -220,7 +220,7 @@ defmodule Commentapi.Replies do
   field :id, 4, type: :string
   field :postid, 5, type: :string
   field :status, 6, type: :int32
-  field :likecount, 7, type: :int32
+  field :count, 7, type: :int32
   field :userlikes, 8, type: :int32
   field :commentid, 9, type: :string
   field :medias, 10, type: Commentapi.Media
@@ -238,7 +238,7 @@ defmodule Commentapi.UpdateCommentRequest do
           userid: String.t(),
           postid: String.t(),
           status: integer,
-          likecount: integer,
+          # count: integer,
           userlikes: integer,
           id: String.t(),
           media_url: String.t()
@@ -249,7 +249,7 @@ defmodule Commentapi.UpdateCommentRequest do
     :userid,
     :postid,
     :status,
-    :likecount,
+    # :count,
     :userlikes,
     :id,
     :media_url
@@ -260,7 +260,7 @@ defmodule Commentapi.UpdateCommentRequest do
   field :userid, 3, type: :string
   field :postid, 4, type: :string
   field :status, 5, type: :int32
-  field :likecount, 6, type: :int32
+  # field :count, 6, type: :int32
   field :userlikes, 7, type: :int32
   field :id, 8, type: :string
   field :media_url, 9, type: :string
@@ -312,7 +312,7 @@ defmodule Commentapi.CreateCommentRequest do
           userid: String.t(),
           postid: String.t(),
           status: integer,
-          likecount: integer,
+          # count: integer,
           userlikes: integer,
           id: String.t(),
           media_url: String.t()
@@ -323,7 +323,7 @@ defmodule Commentapi.CreateCommentRequest do
     :userid,
     :postid,
     :status,
-    :likecount,
+    # :count,
     :userlikes,
     :id,
     :media_url
@@ -334,7 +334,7 @@ defmodule Commentapi.CreateCommentRequest do
   field :userid, 3, type: :string
   field :postid, 4, type: :string
   field :status, 5, type: :int32
-  field :likecount, 6, type: :int32
+  # field :count, 6, type: :int32
   field :userlikes, 7, type: :int32
   field :id, 8, type: :string
   field :media_url, 9, type: :string
@@ -350,7 +350,7 @@ defmodule Commentapi.CreateCommentResponse do
           userid: String.t(),
           postid: String.t(),
           status: integer,
-          likecount: integer,
+          # count: integer,
           userlikes: integer,
           id: String.t(),
           media_url: String.t(),
@@ -363,7 +363,7 @@ defmodule Commentapi.CreateCommentResponse do
     :userid,
     :postid,
     :status,
-    :likecount,
+    # :count,
     :userlikes,
     :id,
     :media_url,
@@ -376,7 +376,7 @@ defmodule Commentapi.CreateCommentResponse do
   field :userid, 3, type: :string
   field :postid, 4, type: :string
   field :status, 5, type: :int32
-  field :likecount, 6, type: :int32
+  # field :count, 6, type: :int32
   field :userlikes, 7, type: :int32
   field :id, 8, type: :string
   field :media_url, 9, type: :string
@@ -418,7 +418,7 @@ defmodule Commentapi.Comment do
           userid: String.t(),
           postid: String.t(),
           status: integer,
-          likecount: integer,
+          count: integer,
           userlikes: integer,
           id: String.t(),
           medias: Commentapi.Media.t() | nil,
@@ -431,7 +431,7 @@ defmodule Commentapi.Comment do
     :userid,
     :postid,
     :status,
-    :likecount,
+    :count,
     :userlikes,
     :id,
     :medias,
@@ -444,7 +444,7 @@ defmodule Commentapi.Comment do
   field :userid, 3, type: :string
   field :postid, 4, type: :string
   field :status, 5, type: :int32
-  field :likecount, 6, type: :int32
+  field :count, 6, type: :int32
   field :userlikes, 7, type: :int32
   field :id, 8, type: :string
   field :medias, 10, type: Commentapi.Media
