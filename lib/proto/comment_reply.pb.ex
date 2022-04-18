@@ -457,11 +457,16 @@ defmodule Commentapi.Media do
   use Protobuf, syntax: :proto3
 
   @type t :: %__MODULE__{
-          media_url: String.t()
+          media_url: String.t(),
+          id: String.t(),
+          status: String.t()
         }
-  defstruct [:media_url]
+  defstruct [:media_url, :id, :status]
 
   field :media_url, 1, type: :string
+  field :id, 2, type: :string
+  field :status, 3, type: :string
+
 end
 
 defmodule Commentapi.CommentService.Service do
